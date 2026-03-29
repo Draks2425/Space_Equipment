@@ -1,0 +1,9 @@
+<!-- Ten blok pokazuje pojedynczy przedmiot i jego status. -->
+<article class="item-row" [class.packed]="item.isPacked">
+  <span class="item-name">{{ item.name }}</span>
+
+  <!-- Ten przycisk zmienia status przedmiotu na spakowany lub nie. -->
+  <button type="button" (click)="onTogglePacked()">
+    {{ item.isPacked ? 'Rozpakuj' : 'Spakuj' }}
+  </button>
+</article>
