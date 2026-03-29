@@ -8,13 +8,13 @@ import { EquipmentItemModel } from '../../models/equipment-item.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EquipmentItemComponent {
-  // Ten Input przyjmuje dane pojedynczego przedmiotu z listy.
+  // ane pojedynczego przedmiotu z listy
   @Input({ required: true }) item!: EquipmentItemModel;
 
-  // Ten Output wysyla id kliknietego elementu do komponentu listy.
+  // id kliknietego elementu do komponentu listy
   @Output() packedToggle = new EventEmitter<number>();
 
-  // Ta funkcja emituje zdarzenie po kliknieciu przycisku.
+  // emitacja zdarzenie po kliknieciu przycisku
   protected onTogglePacked(): void {
     this.packedToggle.emit(this.item.id);
   }
