@@ -1,27 +1,24 @@
-<!-- Ten formularz pozwala dopisac nowy przedmiot do listy. -->
 <section class="list-card" aria-label="Lista ekwipunku">
   <h2>Lista przedmiotow</h2>
 
   <div class="add-row">
     <label for="new-item">Nowy przedmiot</label>
-    <!-- Two-way binding: input i zmienna aktualizuja sie jednoczesnie. -->
+
     <input
       id="new-item"
       name="new-item"
       [(ngModel)]="newItemName"
-      placeholder="Np. Apteczka"
+      placeholder="no wsmunie nwm dodaj co chcesz"
     />
-    <!-- Event binding: klikniecie wywoluje funkcje addItem(). -->
     <button type="button" (click)="addItem()">Dodaj</button>
   </div>
-
-  <!-- Tu pokazujemy, ze input i zmienna sa zsynchronizowane. -->
+<!-- zssynchro inputa ze zmienna -->
   <p class="live-preview">Podglad: {{ newItemName || '...' }}</p>
 
   <ul>
     @for (item of equipment(); track item.id) {
       <li>
-        <!-- Tu przekazujemy dane do dziecka przez @Input(). -->
+        <!-- dane do dzi - @Input(). -->
         <app-equipment-item [item]="item" (packedToggle)="togglePacked($event)" />
       </li>
     }

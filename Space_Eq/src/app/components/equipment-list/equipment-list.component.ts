@@ -11,17 +11,15 @@ import { EquipmentItemComponent } from '../equipment-item/equipment-item.compone
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EquipmentListComponent {
-  // Ta zmienna jest polaczona z polem input przez [(ngModel)].
+  //input przez [(ngModel)].
   protected newItemName = '';
 
-  // Tutaj trzymamy prosta liste startowych przedmiotow.
   protected readonly equipment = signal<EquipmentItemModel[]>([
-    { id: 1, name: 'Kombinezon tlenowy', isPacked: true },
-    { id: 2, name: 'Racje zywnosciowe', isPacked: false },
+    { id: 1, name: 'Kombinezon', isPacked: true },
+    { id: 2, name: 'Racje', isPacked: false },
     { id: 3, name: 'Modul lacznosci', isPacked: false }
   ]);
 
-  // Ta funkcja dodaje nowy przedmiot na koniec listy.
   protected addItem(): void {
     const trimmedName = this.newItemName.trim();
 
@@ -39,7 +37,6 @@ export class EquipmentListComponent {
     this.newItemName = '';
   }
 
-  // Ta funkcja zmienia status spakowania dla jednego elementu.
   protected togglePacked(id: number): void {
     this.equipment.update((items) =>
       items.map((item) =>
