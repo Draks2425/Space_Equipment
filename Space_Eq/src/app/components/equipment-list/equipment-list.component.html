@@ -1,0 +1,29 @@
+<!-- Ten formularz pozwala dopisac nowy przedmiot do listy. -->
+<section class="list-card" aria-label="Lista ekwipunku">
+  <h2>Lista przedmiotow</h2>
+
+  <div class="add-row">
+    <label for="new-item">Nowy przedmiot</label>
+    <input
+      id="new-item"
+      name="new-item"
+      [(ngModel)]="newItemName"
+      placeholder="Np. Apteczka"
+    />
+    <button type="button" (click)="addItem()">Dodaj</button>
+  </div>
+
+  <!-- Tu pokazujemy, ze input i zmienna sa zsynchronizowane. -->
+  <p class="live-preview">Podglad: {{ newItemName || '...' }}</p>
+
+  <ul>
+    @for (item of equipment(); track item.id) {
+      <li [class.packed]="item.isPacked">
+        <span>{{ item.name }}</span>
+        <button type="button" (click)="togglePacked(item.id)">
+          {{ item.isPacked ? 'Rozpakuj' : 'Spakuj' }}
+        </button>
+      </li>
+    }
+  </ul>
+</section>

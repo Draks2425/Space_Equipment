@@ -1,0 +1,27 @@
+:host {
+	display: block;
+	min-height: 100dvh;
+	background: linear-gradient(180deg, #091a2e 0%, #102a46 100%);
+	color: #f3f7fb;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-shell {
+	max-width: 820px;
+	margin: 0 auto;
+	padding: 24px 16px 40px;
+}
+
+.app-header {
+	margin-bottom: 18px;
+}
+
+.app-header h1 {
+	margin: 0 0 8px;
+	font-size: 2rem;
+}
+
+.app-header p {
+	margin: 0;
+	color: #d3e3f4;
+}
