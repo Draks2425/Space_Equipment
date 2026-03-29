@@ -4,12 +4,14 @@
 
   <div class="add-row">
     <label for="new-item">Nowy przedmiot</label>
+    <!-- Two-way binding: input i zmienna aktualizuja sie jednoczesnie. -->
     <input
       id="new-item"
       name="new-item"
       [(ngModel)]="newItemName"
       placeholder="Np. Apteczka"
     />
+    <!-- Event binding: klikniecie wywoluje funkcje addItem(). -->
     <button type="button" (click)="addItem()">Dodaj</button>
   </div>
 

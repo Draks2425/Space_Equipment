@@ -1,5 +1,7 @@
 <!-- Ten blok pokazuje pojedynczy przedmiot i jego status. -->
+<!-- Property binding: klasa CSS zalezy od statusu isPacked. -->
 <article class="item-row" [class.packed]="item.isPacked">
+  <!-- Interpolacja: pokazujemy nazwe przedmiotu. -->
   <span class="item-name">{{ item.name }}</span>
 
   <!-- Ten przycisk zmienia status przedmiotu na spakowany lub nie. -->
