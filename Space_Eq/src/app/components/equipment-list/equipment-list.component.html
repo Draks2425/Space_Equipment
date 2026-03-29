@@ -18,11 +18,9 @@
 
   <ul>
     @for (item of equipment(); track item.id) {
-      <li [class.packed]="item.isPacked">
-        <span>{{ item.name }}</span>
-        <button type="button" (click)="togglePacked(item.id)">
-          {{ item.isPacked ? 'Rozpakuj' : 'Spakuj' }}
-        </button>
+      <li>
+        <!-- Tu przekazujemy dane do dziecka przez @Input(). -->
+        <app-equipment-item [item]="item" (packedToggle)="togglePacked($event)" />
       </li>
     }
   </ul>

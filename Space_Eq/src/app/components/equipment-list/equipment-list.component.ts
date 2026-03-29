@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { EquipmentItemModel } from '../../models/equipment-item.model';
+import { EquipmentItemComponent } from '../equipment-item/equipment-item.component';
 
 @Component({
   selector: 'app-equipment-list',
-  imports: [FormsModule],
+  imports: [FormsModule, EquipmentItemComponent],
   templateUrl: './equipment-list.component.html',
   styleUrl: './equipment-list.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
